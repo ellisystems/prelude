@@ -65,7 +65,7 @@
 ;; are enabled by default.
 
 (require 'prelude-c)
-;; (require 'prelude-clojure)
+(require 'prelude-clojure)
 ;; (require 'prelude-coffee)
 ;; (require 'prelude-common-lisp)
 (require 'prelude-css)
