@@ -165,4 +165,12 @@ This is DEPRECATED, use %s instead." prelude-modules-file))
  ;; greet the use with some useful tip
  (run-at-time 5 nil 'prelude-tip-of-the-day))
 
+;; Web Mode
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+;; Nvm
+(require 'nvm)
+(add-to-list 'auto-mode-alist '("\\.js?\\'" . nvm))
+
 ;;; init.el ends here
