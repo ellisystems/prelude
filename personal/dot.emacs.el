@@ -101,3 +101,7 @@
 (setq lsp-java-workspace-cache-dir "/home/elljoh/dev/projects/jdt-lsp-workspace/")
 
 (global-company-mode 1)
+
+
+;; Web Mode
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
