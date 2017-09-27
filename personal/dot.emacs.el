@@ -38,3 +38,8 @@
       (kill-new filename)
       (message "Copied buffer file name '%s' to the clipboard." filename))))
 (global-set-key (kbd "M-B") 'copy-file-name-to-clipboard)
+
+
+
+;; Web Mode
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
