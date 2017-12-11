@@ -43,3 +43,6 @@
 
 ;; Web Mode
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+;; Disable Flycheck
+(global-flycheck-mode -1)
