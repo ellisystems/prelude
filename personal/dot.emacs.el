@@ -39,8 +39,6 @@
       (message "Copied buffer file name '%s' to the clipboard." filename))))
 (global-set-key (kbd "M-B") 'copy-file-name-to-clipboard)
 
-
-
 ;; Web Mode
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
@@ -49,3 +47,11 @@
 
 ;; Tags
 (global-set-key (kbd "C-x t") 'etags-select-find-tag-at-point)
+
+;; Web Mode
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+;; Nvm
+(require 'nvm)
+(add-to-list 'auto-mode-alist '("\\.js?\\'" . nvm))
