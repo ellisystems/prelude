@@ -111,3 +111,11 @@
 
 ;; Tags
 (global-set-key (kbd "C-x t") 'etags-select-find-tag-at-point)
+
+;; Web Mode
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+;; Nvm
+(require 'nvm)
+(add-to-list 'auto-mode-alist '("\\.js?\\'" . nvm))
