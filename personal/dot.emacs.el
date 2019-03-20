@@ -117,8 +117,8 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
 ;; Nvm
-(require 'nvm)
-(add-to-list 'auto-mode-alist '("\\.js?\\'" . nvm))
+;;(require 'nvm)
+;;(add-to-list 'auto-mode-alist '("\\.js?\\'" . nvm))
 
 ;; For Java Language Server Protocol (LSP) mode
 ;; https://github.com/emacs-lsp/lsp-java
