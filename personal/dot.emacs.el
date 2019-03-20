@@ -39,8 +39,9 @@
       (message "Copied buffer file name '%s' to the clipboard." filename))))
 (global-set-key (kbd "M-B") 'copy-file-name-to-clipboard)
 
-;; Web Mode
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+;; JS mode
+(require 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;; Disable Flycheck
 (global-flycheck-mode -1)
@@ -53,8 +54,8 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
 ;; Nvm
-(require 'nvm)
-(add-to-list 'auto-mode-alist '("\\.js?\\'" . nvm))
+;;(require 'nvm)
+;;(add-to-list 'auto-mode-alist '("\\.js?\\'" . nvm))
 
 ;; For Java Language Server Protocol (LSP) mode
 ;; https://github.com/emacs-lsp/lsp-java
