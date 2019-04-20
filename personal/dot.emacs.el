@@ -44,7 +44,7 @@
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;; Disable Flycheck
-(global-flycheck-mode -1)
+;;(global-flycheck-mode -1)
 
 ;; Tags
 (global-set-key (kbd "C-x t") 'etags-select-find-tag-at-point)
