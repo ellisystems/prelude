@@ -107,7 +107,7 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
 ;; Disable Flycheck
-(global-flycheck-mode -1)
+;;(global-flycheck-mode -1)
 
 ;; Tags
 (global-set-key (kbd "C-x t") 'etags-select-find-tag-at-point)
