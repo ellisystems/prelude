@@ -43,8 +43,12 @@
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
-;; Disable Flycheck
-;;(global-flycheck-mode -1)
+;; Whitespace
+(global-whitespace-mode 1)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Flycheck
+(global-flycheck-mode 1)
 
 ;; Tags
 (global-set-key (kbd "C-x t") 'etags-select-find-tag-at-point)
