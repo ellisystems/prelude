@@ -99,3 +99,5 @@
 
 (setq lsp-java-workspace-dir "/home/elljoh/dev/projects/jdt-lsp-workspace/")
 (setq lsp-java-workspace-cache-dir "/home/elljoh/dev/projects/jdt-lsp-workspace/")
+
+(global-company-mode 1)
