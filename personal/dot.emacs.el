@@ -47,6 +47,16 @@
 (global-whitespace-mode 1)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; Go mode
+;; (add-hook 'before-save-hook #'gofmt-before-save)
+(add-hook 'go-mode-hook
+          (lambda ()
+            (add-hook 'before-save-hook 'gofmt-before-save)
+            (defvar whitespace-style '(face empty trailing lines-tail))
+            (setq tab-width 4)
+            (setq indent-tabs-mode 1)))
+;enable-local-variables
+
 ;; Flycheck
 (global-flycheck-mode 1)
 
@@ -61,44 +71,28 @@
 ;;(require 'nvm)
 ;;(add-to-list 'auto-mode-alist '("\\.js?\\'" . nvm))
 
-;; For Java Language Server Protocol (LSP) mode
-;; https://github.com/emacs-lsp/lsp-java
-(require 'cc-mode)
+;;{{{ yasnippet & auto-insert
 
-(condition-case nil
-    (require 'use-package)
-  (file-error
-   (require 'package)
-   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-   (package-initialize)
-   (package-refresh-contents)
-   (package-install 'use-package)
-   (require 'use-package)))
+(use-package yasnippet
+  :config
+  (add-to-list 'yas-snippet-dirs "~/.emacs.d/personal/snippets/")
+  (yas-global-mode 1))
+
+(defun ibm/js-license ()
+  (interactive)
+  (yas-expand-snippet (yas-lookup-snippet "ibm_js_license" 'js-mode)))
+
+(use-package autoinsert
+  :config
+  (setq auto-insert-query nil)
+  (auto-insert-mode 1)
+  (add-hook 'find-file-hook 'auto-insert)
+  (setq auto-insert-alist nil) ;; remove this like to restore defaults
+  (add-to-list 'auto-insert-alist  '(".*\\.js$" . [ibm/js-license])))
+
+;;}}}
 
 (use-package projectile :ensure t)
-(use-package treemacs :ensure t)
-(use-package yasnippet :ensure t)
-(use-package lsp-mode :ensure t)
-(use-package hydra :ensure t)
-(use-package company-lsp :ensure t)
-(use-package lsp-ui :ensure t)
-(use-package lsp-java :ensure t :after lsp
-             :config (add-hook 'java-mode-hook 'lsp))
-
-(use-package dap-mode
-             :ensure t :after lsp-mode
-             :config
-             (dap-mode t)
-             (dap-ui-mode t))
-
-(use-package dap-java :after (lsp-java))
-(use-package lsp-java-treemacs :after (treemacs))
-
-(require 'lsp-java)
-(add-hook 'java-mode-hook #'lsp)
-
-(setq lsp-java-workspace-dir "/home/elljoh/dev/projects/jdt-lsp-workspace/")
-(setq lsp-java-workspace-cache-dir "/home/elljoh/dev/projects/jdt-lsp-workspace/")
 
 (global-company-mode 1)
 
