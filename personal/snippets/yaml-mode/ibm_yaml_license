@@ -1,0 +1,16 @@
+# name: ibm_elixir_license
+# binding: C-c C-c C-y
+# key: yml
+# --
+################################################################################
+# IBM Confidential
+# OCO Source Materials
+#
+# ${1:default Data Governance and Curation Tools}
+#
+# © Copyright IBM Corp. `(substring (current-time-string) -4 nil)`
+#
+# The source code for this program is not published or otherwise
+# divested of its trade secrets, irrespective of what has been
+# deposited with the U.S. Copyright Office.
+$0

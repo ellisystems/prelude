@@ -3,7 +3,10 @@
 (setq-default css-indent-offset 2)
 (setq-default c-basic-offest 2)
 (setq-default js-indent-level 2)
+(setq-default typescript-indent-level 2)
 (setq-default js2-basic-offset 2)
+
+(add-to-list 'exec-path (concat "/usr/local/go/bin"))
 
 ;; groovy indent hook
 (add-hook 'groovy-mode-hook (
@@ -15,6 +18,10 @@
 
 ;; Grep find shortcut
 (global-set-key (kbd "C-> f") 'grep-find)
+
+;; Search forward regex
+;;(global-set-key (kbd "C-x x") 're-search-forward)
+;; Already defined C-M-s / C-M-r
 
 ;; Duplicate line
 (defun duplicate-line()
@@ -43,6 +50,12 @@
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
+;; JSX/TSX mode
+(require 'rjsx-mode)
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . rjsx-mode))
+
+
 ;; Whitespace
 (global-whitespace-mode 1)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -51,11 +64,17 @@
 ;; (add-hook 'before-save-hook #'gofmt-before-save)
 (add-hook 'go-mode-hook
           (lambda ()
-            (add-hook 'before-save-hook 'gofmt-before-save)
-            (defvar whitespace-style '(face empty trailing lines-tail))
+            (setq enable-local-variables 1)
+            (defvar whitespace-style
+              '(face empty trailing lines-tail)
+              "Custom whitespace style for Golang")
+            (setq whitespace-style
+                  '(face empty trailing lines-tail))
             (setq tab-width 4)
-            (setq indent-tabs-mode 1)))
-;enable-local-variables
+            (setq indent-tabs-mode 1)
+            (add-hook 'before-save-hook 'gofmt-before-save)
+            (whitespace-mode 1)
+            (add-hook 'before-save-hook 'delete-trailing-whitespace)))
 
 ;; Flycheck
 (global-flycheck-mode 1)
