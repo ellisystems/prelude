@@ -147,26 +147,29 @@
    (require 'use-package)))
 
 (use-package projectile :ensure t)
-(use-package treemacs :ensure t)
+;(use-package treemacs :ensure t)
 (use-package yasnippet :ensure t)
-(use-package lsp-mode :ensure t)
-(use-package hydra :ensure t)
-(use-package company-lsp :ensure t)
-(use-package lsp-ui :ensure t)
-(use-package lsp-java :ensure t :after lsp
-             :config (add-hook 'java-mode-hook 'lsp))
+;(use-package lsp-mode :ensure t)
+;(use-package hydra :ensure t)
+;(use-package company-lsp :ensure t)
+;(use-package lsp-ui :ensure t)
+;(use-package lsp-java :ensure t :after lsp
+;             :config (add-hook 'java-mode-hook 'lsp))
 
-(use-package dap-mode
-             :ensure t :after lsp-mode
-             :config
-             (dap-mode t)
-             (dap-ui-mode t))
+;(use-package dap-mode
+;             :ensure t :after lsp-mode
+;             :config
+;             (dap-mode t)
+;             (dap-ui-mode t))
 
-(use-package dap-java :after (lsp-java))
-(use-package lsp-java-treemacs :after (treemacs))
+;(use-package dap-java :after (lsp-java))
+;(use-package lsp-java-treemacs :after (treemacs))
 
-(require 'lsp-java)
-(add-hook 'java-mode-hook #'lsp)
+;(require 'lsp-java)
+;(add-hook 'java-mode-hook #'lsp)
 
-(setq lsp-java-workspace-dir "/home/elljoh/dev/projects/jdt-lsp-workspace/")
-(setq lsp-java-workspace-cache-dir "/home/elljoh/dev/projects/jdt-lsp-workspace/")
+;(setq lsp-java-workspace-dir "/home/elljoh/dev/projects/jdt-lsp-workspace/")
+;(setq lsp-java-workspace-cache-dir "/home/elljoh/dev/projects/jdt-lsp-workspace/")
+
+(add-hook 'prelude-prog-mode-hook
+          (lambda () (smartparens-mode -1)) t)

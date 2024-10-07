@@ -8,5 +8,11 @@
 ;  )
 ;(global-set-key (kbd "C-x C-d") 'duplicate-line)
 
-(setq org-support-shift-select 1)
+(defvar org-edit-src-content-indentation)
+(defvar org-src-preserve-indentation)
 
+(setq-default org-support-shift-select 'always)
+(setq org-edit-src-content-indentation 0)
+(setq org-src-preserve-indentation nil)
+
+(require 'org-tempo)
