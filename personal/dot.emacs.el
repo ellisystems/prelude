@@ -55,7 +55,6 @@
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . rjsx-mode))
 
-
 ;; Whitespace
 (global-whitespace-mode 1)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
