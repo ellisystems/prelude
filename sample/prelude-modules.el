@@ -84,12 +84,8 @@
 ;; (require 'prelude-lua)
 ;; (require 'prelude-ocaml)
 (require 'prelude-perl)
-<<<<<<< HEAD
-;; (require 'prelude-python)
-;; (require 'prelude-racket)
-=======
 (require 'prelude-python)
->>>>>>> origin/my-prelude
+;; (require 'prelude-racket)
 ;; (require 'prelude-ruby)
 ;; (require 'prelude-rust)
 ;; (require 'prelude-scala)
