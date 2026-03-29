@@ -59,7 +59,7 @@
     (cancel-timer my/daily-org-timer))
   ;; Set the new timer
   (setq my/daily-org-timer
-        (run-at-time "00:00" 86400 #'my/create-and-open-daily-org)))
+        (run-at-time "00:00" 86400 #'my/create-daily-org-file)))
 
 ;; Call the scheduler
 (my/schedule-daily-org)
