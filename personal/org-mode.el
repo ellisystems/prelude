@@ -37,7 +37,7 @@
     (find-file filename)))
 
 ;; Run the function after Emacs has finished initializing
-(add-hook 'after-init-hook #'my/create-daily-org-file)
+;; (add-hook 'after-init-hook #'my/create-daily-org-file)
 
 (defun my/insert-org-date-with-time ()
   "Insert an active Org mode timestamp with the current date and time."
@@ -62,4 +62,4 @@
         (run-at-time "00:00" 86400 #'my/create-daily-org-file)))
 
 ;; Call the scheduler
-(my/schedule-daily-org)
+;;(my/schedule-daily-org)
